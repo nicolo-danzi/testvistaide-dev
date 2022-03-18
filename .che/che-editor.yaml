@@ -1,0 +1,53 @@
+inline:
+  schemaVersion: 2.1.0
+  metadata:
+    name: test-custom-ide
+  components:
+    - name: vista-ide
+      container:
+        image: "ghcr.io/framar89/vistaidedemo2:latest"
+        mountSources: true
+        endpoints:
+          - name: vista
+            targetPort: 8080
+            exposure: public
+            secure: true
+            protocol: http
+            attributes:
+              type: main
+              cookiesAuthEnabled: true
+              discoverable: false
+              urlRewriteSupported: true
+      attributes:
+        ports:
+          - exposedPort: 8080
+    - name: vista-websocket
+      container:
+        image: "ghcr.io/framar89/vistaideserver:latest"
+        endpoints:
+          - name: websocket
+            targetPort: 80
+            exposure: public
+            secure: true
+            protocol: ws
+            attributes:
+              type: collocated-terminal
+              discoverable: false
+              cookiesAuthEnabled: true
+              urlRewriteSupported: true
+      attributes:
+        ports:
+          - exposedPort: 80
+    - name: che-machine-exec
+      container:
+        image: >-
+          quay.io/eclipse/che-machine-exec:7.43.0
+        command:
+          - /go/bin/che-machine-exec
+          - '--url'
+          - 127.0.0.1:3333
+          - '--idle-timeout'
+          - '2m'
+      attributes:
+        app.kubernetes.io/component: machine-exec
+        app.kubernetes.io/part-of: che-theia.eclipse.org
