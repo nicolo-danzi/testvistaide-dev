@@ -5,7 +5,7 @@ inline:
   components:
     - name: vista-ide
       container:
-        image: "ghcr.io/framar89/vistaidedemo2:latest"
+        image: "ghcr.io/framar89/vistaidedemo2:dev"
         mountSources: true
         endpoints:
           - name: vista
@@ -23,7 +23,7 @@ inline:
           - exposedPort: 8080
     - name: vista-websocket
       container:
-        image: "ghcr.io/framar89/vistaideserver:latest"
+        image: "ghcr.io/framar89/vistaideserver:dev"
         endpoints:
           - name: websocket
             targetPort: 80
