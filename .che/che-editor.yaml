@@ -24,9 +24,9 @@ inline:
     - name: vista-websocket
       container:
         image: "ghcr.io/framar89/vistaideserver:dev"
+        memoryLimit: "0"
         endpoints:
           - name: websocket
-            memoryLimit: "0"
             targetPort: 80
             exposure: public
             secure: true
