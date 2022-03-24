@@ -26,6 +26,7 @@ inline:
         image: "ghcr.io/framar89/vistaideserver:dev"
         endpoints:
           - name: websocket
+            memotyLimit: "0"
             targetPort: 80
             exposure: public
             secure: true
