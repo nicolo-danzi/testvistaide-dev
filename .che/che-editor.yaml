@@ -39,3 +39,6 @@ inline:
       attributes:
         ports:
           - exposedPort: 80
+    - name: testtap
+      container:
+        image: ghcr.io/framar89/testtap:latest
