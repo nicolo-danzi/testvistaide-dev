@@ -9,11 +9,11 @@ inline:
         mountSources: true
         env:
           - name: CONFIG_OAUTH_REDIRECT_URI
-            value: https://optix.qplatform.it/oidc/silent-refresh.html
+            value: https://vista2.qplatform.it/oidc/silent-refresh.html
           - name: CONFIG_OAUTH_SILENT_REDIRECT_URI
-            value: https://optix.qplatform.it/oidc/silent-refresh.html
+            value: https://vista2.qplatform.it/oidc/silent-refresh.html
           - name: CONFIG_OAUTH_POST_LOGOUT_REDIRECT_URI
-            value: https://optix.qplatform.it
+            value: https://vista2.qplatform.it
         endpoints:
           - name: vista
             targetPort: 8080
@@ -35,11 +35,11 @@ inline:
         memoryRequest: "200M"
         env:
           - name: CONFIG_FTRA_ACCESS_SERVER
-            value: "accessserver.cloud-dev.rockwellautomation.com"
+            value: acessserver.cloud-dev.rockwellautomation.com
           - name: CONFIG_FTRA_RESTAPI
-            value: "ftra-webapi.cloud-dev.rockwellautomation.com"
+            value: ftra-webapi.cloud-dev.rockwellautomation.com
           - name: CONFIG_VISTA_RESTAPI
-            value: "vistaapi.qplatform.it"
+            value: vistaapi.qplatform.it
         endpoints:
           - name: websocket
             targetPort: 80
