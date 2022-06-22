@@ -9,11 +9,11 @@ inline:
         mountSources: true
         env:
           - name: CONFIG_OAUTH_REDIRECT_URI
-            value: "https://optix.qplatform.it/oidc/silent-refresh.html"
+            value: https://optix.qplatform.it/oidc/silent-refresh.html
           - name: CONFIG_OAUTH_SILENT_REDIRECT_URI
-            value: "https://optix.qplatform.it/oidc/silent-refresh.html"
+            value: https://optix.qplatform.it/oidc/silent-refresh.html
           - name: CONFIG_OAUTH_POST_LOGOUT_REDIRECT_URI
-            value: "https://optix.qplatform.it"
+            value: https://optix.qplatform.it
         endpoints:
           - name: vista
             targetPort: 8080
